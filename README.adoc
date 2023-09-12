@@ -85,7 +85,7 @@ image::Markovian/HMM-based-Text-Prediction-Generation/Math.png[]
 
 I've added two text generation models that use HMMs. You can find them
 
-link:(Markovian/HMM-based-Text-Prediction-Generation/)[here] and link:(Markovian/README.adoc)[here]
+link:Markovian/HMM-based-Text-Prediction-Generation/[here] and link:Markovian/README.adoc[here]
 
 == RNNs
 
