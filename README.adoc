@@ -1,4 +1,5 @@
-= LLaMaO: NLP, RNNs, Transformers, LLMs and stuff...
+= LLaMaO
+NLP, RNNs, Transformers, LLMs and stuff...
 
 :doctype: book
 :preface-title: Preface
@@ -89,7 +90,9 @@ link:Markovian/HMM-based-Text-Prediction-Generation/[here] and link:Markovian/RE
 
 == RNNs
 
+image::https://www.tensorflow.org/static/text/tutorials/images/text_generation_training.png[]
 
+include::RNN/README.adoc[]
 
 == Transformers
 
