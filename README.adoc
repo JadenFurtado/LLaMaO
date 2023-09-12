@@ -1,0 +1,112 @@
+= LLaMaO: NLP, RNNs, Transformers, LLMs and stuff...
+
+:doctype: book
+:preface-title: Preface
+// Settings:
+:experimental:
+:reproducible:
+:icons: font
+:listing-caption: Listing
+:sectnums:
+:toc:
+:toclevels: 3
+:experimental:
+:reproducible:
+:icons: font
+:listing-caption: Listing
+:sectnums:
+:toc:
+:toclevels: 3
+:xrefstyle: short
+ifdef::backend-pdf[]
+:source-lighter: rouge
+endif::[]
+// URIs:
+
+== Introduction
+
+I've found that most gloss over text generation and take this stuff at face level without understanding the beauty which lies beneath. The purpose of this is to give you an intuition of what is going on behind the scenes. The analogies aren't the best, but then again I haven't promised mathematical rigour!
+
+image::https://i.pinimg.com/originals/aa/e1/c8/aae1c8a32d6bfa5aa3db567fc14f8451.jpg[]
+
+
+*P.S: I love maths, so don't judge me!*
+
+== NLP
+
+[1] Natural language processing (NLP) is an interdisciplinary subfield of computer science and linguistics. It is primarily concerned with giving computers the ability to support and manipulate speech. It involves processing natural language datasets, such as text corpora or speech corpora, using either rule-based or probabilistic (i.e. statistical and, most recently, neural network-based) machine learning approaches. The goal is a computer capable of "understanding" the contents of documents, including the contextual nuances of the language within them. The technology can then accurately extract information and insights contained in the documents as well as categorize and organize the documents themselves.
+
+Challenges in natural language processing frequently involve speech recognition, natural-language understanding, and natural-language generation. 
+
+image::https://cdn.ttgtmedia.com/rms/onlineimages/how_nlp_nlu_nlg_are_related-f.png[]
+
+*We'll be focusing on Natural Language generation(NLG)*
+
+=== How does NLG work?
+NLG is a multi-stage process, with each step further refining the data being used to produce content with natural-sounding language. The six stages of NLG are as follows:
+
+*Content analysis.* 
+Data is filtered to determine what should be included in the content produced at the end of the process. This stage includes identifying the main topics in the source document and the relationships between them.
+
+*Data understanding.* 
+The data is interpreted, patterns are identified and it's put into context. Machine learning is often used at this stage.
+
+*Document structuring.* 
+A document plan is created and a narrative structure chosen based on the type of data being interpreted.
+
+*Sentence aggregation.* 
+Relevant sentences or parts of sentences are combined in ways that accurately summarize the topic.
+
+*Grammatical structuring.* 
+Grammatical rules are applied to generate natural-sounding text. The program deduces the syntactical structure of the sentence. It then uses this information to rewrite the sentence in a grammatically correct manner.
+
+*Language presentation.* 
+The final output is generated based on a template or format the user or programmer has selected.
+
+== Hidden Markovian Models
+
+In this, we'll specifically be dealing with Hidden Markov models
+
+=== What are Markovian Models
+
+image::https://i.ytimg.com/vi/9yl4XGp5OEg/maxresdefault.jpg[]
+
+
+
+=== Want the maths behind this stuff?
+
+image::Markovian/HMM-based-Text-Prediction-Generation/Math.png[]
+
+=== Text Generation
+
+
+
+=== Example Text generation models using HMMs
+
+I've added two text generation models that use HMMs. You can find them
+
+link:(Markovian/HMM-based-Text-Prediction-Generation/)[here] and link:(Markovian/README.adoc)[here]
+
+== RNNs
+
+
+
+== Transformers
+
+
+
+== BERT
+
+
+
+== LLMs
+
+
+
+== References
+
+[1] https://en.wikipedia.org/wiki/Neuro-linguistic_programming
+
+[2] https://www.techtarget.com/searchenterpriseai/definition/natural-language-generation-NLG
+
+[3] https://github.com/Usajid/HMM-based-Text-Prediction-Generation/
