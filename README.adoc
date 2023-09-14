@@ -192,6 +192,10 @@ Yes, bring on RNNs
 
 == RNNs
 
+=== What are RNNs again?
+
+Well, they're the big brother of Markovian Models :)
+
 image::https://www.tensorflow.org/static/text/tutorials/images/text_generation_training.png[]
 
 include::RNN/README.adoc[]
