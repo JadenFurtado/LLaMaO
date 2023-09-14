@@ -1,6 +1,5 @@
 = LLaMaO
-NLP, RNNs, Transformers, LLMs and stuff...
-
+NLP, RNNs, Transformers, LLMs and stuff... by Jaden Furtado
 :doctype: book
 :preface-title: Preface
 // Settings:
@@ -11,18 +10,13 @@ NLP, RNNs, Transformers, LLMs and stuff...
 :sectnums:
 :toc:
 :toclevels: 3
-:experimental:
-:reproducible:
-:icons: font
-:listing-caption: Listing
-:sectnums:
-:toc:
-:toclevels: 3
 :xrefstyle: short
 ifdef::backend-pdf[]
-:source-lighter: rouge
+:pdf-theme: index
+:pdf-themesdir: {docdir}
+:source-highlighter: rouge
+//:rouge-style: github
 endif::[]
-// URIs:
 
 == Introduction
 
