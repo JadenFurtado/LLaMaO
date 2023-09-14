@@ -26,12 +26,71 @@ endif::[]
 
 == Introduction
 
-I've found that most gloss over text generation and take this stuff at face level without understanding the beauty which lies beneath. The purpose of this is to give you an intuition of what is going on behind the scenes. The analogies aren't the best, but then again I haven't promised mathematical rigour!
+I've found that most gloss over text generation and take this stuff at face level without understanding the beauty which lies beneath. The purpose of this is to give you an intuition of what is going on behind the scenes.
+
+```
+Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.
+```
+*Francis of Assisi*
+
+I'll be following the approach of this quote :)
+
 
 image::https://i.pinimg.com/originals/aa/e1/c8/aae1c8a32d6bfa5aa3db567fc14f8451.jpg[]
 
 
+The analogies aren't the best, but then again I haven't promised mathematical rigour!
+
 *P.S: I love maths, so don't judge me!*
+
+
+== But how do computers work :_)
+
+I'm sure you're asking yourself, why do I need this information for understanding LLMs, but I assure you, this will come back later on and is crucial for gaining an intuition :)
+
+In it's purest form, I would argue that computers store information in the form of binary digits, i.e. as 1s and 0s. They have a processor accepts this(maybe whole or in chunks) information in the form of inputs, does some mathematical stuff, one instruction provided by the user at a time, say foo() on them and spits out an output that is also in the form of 1s and 0s that can be interpreted to arrive at some useful conclusion.
+
+image::https://cdn4.explainthatstuff.com/how-computer-works.png[]
+
+== What is the purpose of ML?
+
+I know it's another silly question at face value, but I promise you, it it super important for gaining an intuition behind LLMs :)
+
+=== Giving it a go
+
+Say I gave you, the reader a task. The task goes something as follows:
+
+
+I have bunch of inputs, say ```Inp```. 
+I have a bunch of expected outputs, say ```Out```. I know when I pass the inputs through a function ```foo()```, it gives me the expected output ```Out```. Can you figure out a way to replicate this function ```foo()``` using a computer if ```foo()``` was a blackbox(no way of knowing what was going on inside) function?
+
+```
+inp = data
+output = foo(inp)
+```
+
+If I were to put this in code as shown above, we could say that given the input and output, figure out how to replicate foo
+
+Say we have another function ```goo()```. It accepts three inputs. They are ```inputs```, ```weights``` and ```biases``` respectively.
+
+We could now reword the problem statement to something like
+
+Given a bunch of inputs, expected outputs, weights and biases, adjust the weights and biases in ```goo()```, such that you minimize ```|output-output'|```. We effectively want to tune these two inputs so that we can adjust the output of our mock function goo() 
+
+```
+inputs = data
+output'= goo(inputs,weights,biases)
+output = foo(inputs)
+```
+
+In an ideal world, we want to ensure that ```difference(output,output')``` is equal to 0.
+
+If you've read through all of that, well good for you, because
+
+=== This act of adjusting the weights and biases is called Machine learning :)
+
+Now there are many ways to achieve this, i.e. the adjustment of weights and biases and it depends on what you want to do. 
+
 
 == NLP
 
@@ -64,22 +123,48 @@ Grammatical rules are applied to generate natural-sounding text. The program ded
 *Language presentation.* 
 The final output is generated based on a template or format the user or programmer has selected.
 
+== In our case, we are looking at generative AI. Specifically, given some input text, we want a response, also in text which is human readable. 
+
+Throwback to what we did in the previous section, i.e. adjust weights and biases of goo() such that it approximates foo()
+
+In our case, since we are looking at generative AI with NLP. 
+Specifically, we have an imginary function foo(), which given some input text, gives us a *relevant* response, also in text which is human readable. Find a function ```goo()``` that will approximate this!
+
+Remember how I said that there are many ways of going about finding the weights and biases such that output-output' is as small as possible? Yeah, from this point onwards, each chapter is one such method. They get progressively better at this. In other words, output-output' keeps getting smaller :)
+
 == Hidden Markovian Models
 
-In this, we'll specifically be dealing with Hidden Markov models
+Let's take a step back and think about the problem. 
+
+=== What are we trying to do? 
+We are trying to generate coherent sentences that are relevant to us. 
+
+=== What's the silliest thing that would work?
+
+Well, if we have a sample text of what we expect from our function ```goo()```, which we do, we could just look at which words occur together and assign them a weight based on how likely two words are to occur next to each other.
+
+This is called a co-occurence matrix :)
+
+image::https://x-wei.github.io/images/xcs224n-lecture2/pasted_image012.png[]
+
+We can now use this information to generate sentences. 
+
+include::Markovian/README.adoc[lines=4..33]
+
+Mathematically, this idea can be represented using Markov models.
+
+In this, we'll specifically be dealing with Hidden Markov models. 
 
 === What are Markovian Models
 
 image::https://i.ytimg.com/vi/9yl4XGp5OEg/maxresdefault.jpg[]
 
 
-
 === Want the maths behind this stuff?
 
+For the math geeks, here is the maths :)
+
 image::Markovian/HMM-based-Text-Prediction-Generation/Math.png[]
-
-=== Text Generation
-
 
 
 === Example Text generation models using HMMs
@@ -87,6 +172,23 @@ image::Markovian/HMM-based-Text-Prediction-Generation/Math.png[]
 I've added two text generation models that use HMMs. You can find them
 
 link:Markovian/HMM-based-Text-Prediction-Generation/[here] and link:Markovian/README.adoc[here]
+
+Okay, that's a good start, sort off...
+
+In this case, we have a few issues
+
+* The generated text is as good as the input corpus (garbage in garbage out)
+
+More importantly,
+
+* We find the need to create multiple n-gram Markov Chains (high order model) to captue the context.
+
+Going back to what we discussed in the, we find a problem. This is going to cost us a ton of resources computationally :P 
+
+Sure, it may get better eventually, and we could optimize our work by doing stuff in parallel and foo, but, what's the use of the model if it takes 20000 years to get decent at generation of coherent sentences? 
+
+Can we do better than this? 
+Yes, bring on RNNs
 
 == RNNs
 
@@ -96,7 +198,7 @@ include::RNN/README.adoc[]
 
 == Transformers
 
-
+image::https://machinelearningmastery.com/wp-content/uploads/2021/08/attention_research_1.png[]
 
 == BERT
 
@@ -113,3 +215,7 @@ include::RNN/README.adoc[]
 [2] https://www.techtarget.com/searchenterpriseai/definition/natural-language-generation-NLG
 
 [3] https://github.com/Usajid/HMM-based-Text-Prediction-Generation/
+
+[4] https://medium.com/@annikabrundyn1/the-beginners-guide-to-recurrent-neural-networks-and-text-generation-44a70c34067f
+
+[5] https://www.tensorflow.org/text/tutorials/text_generation
