@@ -194,7 +194,7 @@ Yes, bring on RNNs
 
 === What are RNNs again?
 
-Well, they're the big brother of Markovian Models :)
+Well, they're the big brother of Markovian Models :) Sort off!
 
 image::https://www.tensorflow.org/static/text/tutorials/images/text_generation_training.png[]
 
