@@ -1,0 +1,47 @@
+name: Build and deploy website
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch: # Allows manual execution of workflow
+
+jobs:
+    build:
+        if: startsWith(github.ref, 'refs/heads/')
+        runs-on: ubuntu-latest
+        container: "docker://asciidoctor/docker-asciidoctor:latest"
+        permissions:
+            pages: write
+            id-token: write 
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Build site using Asciidoctor
+              run: asciidoctor -a webfonts! -o "index.html" "README.adoc"
+
+            - name: Create Pages artifact
+              shell: sh
+              run: |
+                for f in $(chmod -c -R +r . | awk '{print substr($3, 2, length($3)-2)}'); do
+                  echo "::warning::Added read permission to $f"
+                done
+                tar \
+                    --directory "." \
+                    -cvf "$RUNNER_TEMP/artifact.tar" \
+                    --exclude=.git \
+                    --exclude=.github \
+                    .
+            - name: Upload Pages artifact
+              uses: actions/upload-artifact@v3
+              with:
+                  name: github-pages
+                  path: ${{ runner.temp }}/artifact.tar
+                  retention-days: 1
+
+            - name: Deploy to GitHub Pages
+              uses: actions/deploy-pages@v1
