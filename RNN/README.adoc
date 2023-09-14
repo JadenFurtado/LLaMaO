@@ -11,6 +11,7 @@ This post was heavily inspired by a few incredible online resources and is prima
 (P.S. I am assuming you have some basic knowledge of neural networks — if you’re in need, this is a great article to get started with)
 
 === Recurrent Neural Networks (RNNs)
+
 ==== Sequence Data
 
 RNNs generalise feedforward networks (FFNs) to be able to model sequential data. FFNs take an input (e.g. an image) and immediately produce an output (e.g. probabilities of different classes). RNNs, on the other hand, consider the data sequentially, and can remember what they have seen earlier in the sequence to help interpret elements from later in the sequence.

@@ -71,15 +71,15 @@ output = foo(inp)
 
 If I were to put this in code as shown above, we could say that given the input and output, figure out how to replicate foo
 
-Say we have another function ```goo()```. It accepts three inputs. They are ```inputs```, ```weights``` and ```biases``` respectively.
+Say we have another function ```boo()```. It accepts three inputs. They are ```inputs```, ```weights``` and ```biases``` respectively.
 
 We could now reword the problem statement to something like
 
-Given a bunch of inputs, expected outputs, weights and biases, adjust the weights and biases in ```goo()```, such that you minimize ```|output-output'|```. We effectively want to tune these two inputs so that we can adjust the output of our mock function goo() 
+Given a bunch of inputs, expected outputs, weights and biases, adjust the weights and biases in ```boo()```, such that you minimize ```|output-output'|```. We effectively want to tune these two inputs so that we can adjust the output of our mock function boo() 
 
 ```
 inputs = data
-output'= goo(inputs,weights,biases)
+output'= boo(inputs,weights,biases)
 output = foo(inputs)
 ```
 
@@ -125,10 +125,10 @@ The final output is generated based on a template or format the user or programm
 
 == In our case, we are looking at generative AI. Specifically, given some input text, we want a response, also in text which is human readable. 
 
-Throwback to what we did in the previous section, i.e. adjust weights and biases of goo() such that it approximates foo()
+Throwback to what we did in the previous section, i.e. adjust weights and biases of boo() such that it approximates foo()
 
 In our case, since we are looking at generative AI with NLP. 
-Specifically, we have an imginary function foo(), which given some input text, gives us a *relevant* response, also in text which is human readable. Find a function ```goo()``` that will approximate this!
+Specifically, we have an imginary function foo(), which given some input text, gives us a *relevant* response, also in text which is human readable. Find a function ```boo()``` that will approximate this!
 
 Remember how I said that there are many ways of going about finding the weights and biases such that output-output' is as small as possible? Yeah, from this point onwards, each chapter is one such method. They get progressively better at this. In other words, output-output' keeps getting smaller :)
 
@@ -141,7 +141,7 @@ We are trying to generate coherent sentences that are relevant to us.
 
 === What's the silliest thing that would work?
 
-Well, if we have a sample text of what we expect from our function ```goo()```, which we do, we could just look at which words occur together and assign them a weight based on how likely two words are to occur next to each other.
+Well, if we have a sample text of what we expect from our function ```boo()```, which we do, we could just look at which words occur together and assign them a weight based on how likely two words are to occur next to each other.
 
 This is called a co-occurence matrix :)
 
@@ -165,7 +165,6 @@ image::https://i.ytimg.com/vi/9yl4XGp5OEg/maxresdefault.jpg[]
 For the math geeks, here is the maths :)
 
 image::Markovian/HMM-based-Text-Prediction-Generation/Math.png[]
-
 
 === Example Text generation models using HMMs
 
@@ -192,13 +191,55 @@ Yes, bring on RNNs
 
 == RNNs
 
-=== What are RNNs again?
+Well before there were RNNs, we had simple Feed Forward Neural networks :) 
 
-Well, they're the big brother of Markovian Models :) Sort off!
+=== What the heck is a Feed Forward Neural Network?
+While these don't add much value to our discussion about solving the text generation problem, they are important for understanding RNNs! 
+
+* A feed forward neural network consists, surprise-surprise, neurons!
+
+image::https://media.geeksforgeeks.org/wp-content/uploads/20211006141212/BPN.png[]
+
+==== What is a neuron you ask?
+
+image::https://www.researchgate.net/publication/337552334/figure/fig1/AS:829657444265986@1574817157632/The-structure-of-the-feedforward-neural-network-approach-algorithm-is-shown-Basically.ppm[]
+
+Well, throw back to out function ```boo()```. Remember how I said it accepts weights and biases? 
+Yeah, well, when you supply a bunch of weights and biases, in the form of a matrix, you effectively have yourselves a Neural Network of sorts :)
+
+Right now, we aren't concerned with the exact structure of our Neural network. What we are concerned with is generating coherent text!
+
+The reason I said that FFNs aren't great for our task is cause they are a one time thing. 
+*The output of our network only depends upton the input you feed into it at the time of execution and does not depend upon past inputs.*
+This causes a ton of problems when we are trying to model something the is sequential, such as language!
+As we have previously discussed, the past word is important for us to predict the next word. How do we get around this in an FFN? Well we add a recurrent element to the Network. Let's call this element ```history``` 
+
+
+Remember how I said ```boo()``` was effectively a neural network? Let's modify it
+
+We add the historic term ```hist``` so that boo now accepts ```boo(inputs, weights, biases, hist)``` 
+
+What's the purpose of hist? To track/model the current state of the RNN. Yes, we now have ourselves a fancy(and very powerful) state machine :)
+
+=== But what are RNNs again?
+
+Well, they're the big brother of Markovian Models :) Sort off! I'd argue that an RNN is a more specific version of a Markov Model; A Markov Model with a fancy hat on????
+
+It is difficult for me to explain what I mean by this without additional information. Heck, this is not a book, it's just a repository!
 
 image::https://www.tensorflow.org/static/text/tutorials/images/text_generation_training.png[]
 
-include::RNN/README.adoc[]
+link:RNN/README.adoc[I've added a detailed walk through of RNNs for your reference here]
+
+
+==== Run a Vanilla RNN
+
+I've added the code for a vanilla RNN link:RNN/RNN.py[here]
+
+```python
+include::RNN/RNN.py[]
+```
+
 
 == Transformers
 
@@ -223,3 +264,5 @@ image::https://machinelearningmastery.com/wp-content/uploads/2021/08/attention_r
 [4] https://medium.com/@annikabrundyn1/the-beginners-guide-to-recurrent-neural-networks-and-text-generation-44a70c34067f
 
 [5] https://www.tensorflow.org/text/tutorials/text_generation
+
+[6] https://gist.github.com/karpathy/d4dee566867f8291f086
