@@ -443,57 +443,57 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>LLaMaO</h1>
 <div class="details">
 <span id="author" class="author">NLP, RNNs, Transformers, LLMs and stuff&#8230;&#8203; by Jaden Furtado</span><br>
+<span id="revdate">== Introduction</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_introduction">1. Introduction</a></li>
-<li><a href="#_but_how_do_computers_work">2. But how do computers work :_)</a></li>
-<li><a href="#_what_is_the_purpose_of_ml">3. What is the purpose of ML?</a>
+<li><a href="#_but_how_do_computers_work">1. But how do computers work :_)</a></li>
+<li><a href="#_what_is_the_purpose_of_ml">2. What is the purpose of ML?</a>
 <ul class="sectlevel2">
-<li><a href="#_giving_it_a_go">3.1. Giving it a go</a></li>
-<li><a href="#_this_act_of_adjusting_the_weights_and_biases_is_called_machine_learning">3.2. This act of adjusting the weights and biases is called Machine learning :)</a></li>
+<li><a href="#_giving_it_a_go">2.1. Giving it a go</a></li>
+<li><a href="#_this_act_of_adjusting_the_weights_and_biases_is_called_machine_learning">2.2. This act of adjusting the weights and biases is called Machine learning :)</a></li>
 </ul>
 </li>
-<li><a href="#_nlp">4. NLP</a>
+<li><a href="#_nlp">3. NLP</a>
 <ul class="sectlevel2">
-<li><a href="#_how_does_nlg_work">4.1. How does NLG work?</a></li>
+<li><a href="#_how_does_nlg_work">3.1. How does NLG work?</a></li>
 </ul>
 </li>
-<li><a href="#_in_our_case_we_are_looking_at_generative_ai_specifically_given_some_input_text_we_want_a_response_also_in_text_which_is_human_readable">5. In our case, we are looking at generative AI. Specifically, given some input text, we want a response, also in text which is human readable.</a></li>
-<li><a href="#_hidden_markovian_models">6. Hidden Markovian Models</a>
+<li><a href="#_in_our_case_we_are_looking_at_generative_ai_specifically_given_some_input_text_we_want_a_response_also_in_text_which_is_human_readable">4. In our case, we are looking at generative AI. Specifically, given some input text, we want a response, also in text which is human readable.</a></li>
+<li><a href="#_hidden_markovian_models">5. Hidden Markovian Models</a>
 <ul class="sectlevel2">
-<li><a href="#_what_are_we_trying_to_do">6.1. What are we trying to do?</a></li>
-<li><a href="#_whats_the_silliest_thing_that_would_work">6.2. What&#8217;s the silliest thing that would work?</a></li>
-<li><a href="#_what_are_markovian_models">6.3. What are Markovian Models</a></li>
-<li><a href="#_want_the_maths_behind_this_stuff">6.4. Want the maths behind this stuff?</a></li>
-<li><a href="#_example_text_generation_models_using_hmms">6.5. Example Text generation models using HMMs</a></li>
+<li><a href="#_what_are_we_trying_to_do">5.1. What are we trying to do?</a></li>
+<li><a href="#_whats_the_silliest_thing_that_would_work">5.2. What&#8217;s the silliest thing that would work?</a></li>
+<li><a href="#_what_are_markovian_models">5.3. What are Markovian Models</a></li>
+<li><a href="#_want_the_maths_behind_this_stuff">5.4. Want the maths behind this stuff?</a></li>
+<li><a href="#_example_text_generation_models_using_hmms">5.5. Example Text generation models using HMMs</a></li>
 </ul>
 </li>
-<li><a href="#_rnns">7. RNNs</a>
+<li><a href="#_rnns">6. RNNs</a>
 <ul class="sectlevel2">
-<li><a href="#_what_the_heck_is_a_feed_forward_neural_network">7.1. What the heck is a Feed Forward Neural Network?</a>
+<li><a href="#_what_the_heck_is_a_feed_forward_neural_network">6.1. What the heck is a Feed Forward Neural Network?</a>
 <ul class="sectlevel3">
-<li><a href="#_what_is_a_neuron_you_ask">7.1.1. What is a neuron you ask?</a></li>
+<li><a href="#_what_is_a_neuron_you_ask">6.1.1. What is a neuron you ask?</a></li>
 </ul>
 </li>
-<li><a href="#_but_what_are_rnns_again">7.2. But what are RNNs again?</a>
+<li><a href="#_but_what_are_rnns_again">6.2. But what are RNNs again?</a>
 <ul class="sectlevel3">
-<li><a href="#_run_a_vanilla_rnn">7.2.1. Run a Vanilla RNN</a></li>
+<li><a href="#_run_a_vanilla_rnn">6.2.1. Run a Vanilla RNN</a></li>
 </ul>
 </li>
+<li><a href="#_what_do_you_think_is_the_main_drawback_of_rnns">6.3. What do you think is the main drawback of RNNs?</a></li>
 </ul>
 </li>
-<li><a href="#_transformers">8. Transformers</a></li>
-<li><a href="#_bert">9. BERT</a></li>
-<li><a href="#_llms">10. LLMs</a></li>
-<li><a href="#_references">11. References</a></li>
+<li><a href="#_transformers">7. Transformers</a></li>
+<li><a href="#_bert">8. BERT</a></li>
+<li><a href="#_llms">9. LLMs</a></li>
+<li><a href="#_references">10. References</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_introduction">1. Introduction</h2>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>I&#8217;ve found that most gloss over text generation and take this stuff at face level without understanding the beauty which lies beneath. The purpose of this is to give you an intuition of what is going on behind the scenes.</p>
@@ -523,7 +523,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_but_how_do_computers_work">2. But how do computers work :_)</h2>
+<h2 id="_but_how_do_computers_work">1. But how do computers work :_)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>I&#8217;m sure you&#8217;re asking yourself, why do I need this information for understanding LLMs, but I assure you, this will come back later on and is crucial for gaining an intuition :)</p>
@@ -539,13 +539,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_what_is_the_purpose_of_ml">3. What is the purpose of ML?</h2>
+<h2 id="_what_is_the_purpose_of_ml">2. What is the purpose of ML?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>I know it&#8217;s another silly question at face value, but I promise you, it it super important for gaining an intuition behind LLMs :)</p>
 </div>
 <div class="sect2">
-<h3 id="_giving_it_a_go">3.1. Giving it a go</h3>
+<h3 id="_giving_it_a_go">2.1. Giving it a go</h3>
 <div class="paragraph">
 <p>Say I gave you, the reader a task. The task goes something as follows:</p>
 </div>
@@ -586,7 +586,7 @@ output = foo(inputs)</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_this_act_of_adjusting_the_weights_and_biases_is_called_machine_learning">3.2. This act of adjusting the weights and biases is called Machine learning :)</h3>
+<h3 id="_this_act_of_adjusting_the_weights_and_biases_is_called_machine_learning">2.2. This act of adjusting the weights and biases is called Machine learning :)</h3>
 <div class="paragraph">
 <p>Now there are many ways to achieve this, i.e. the adjustment of weights and biases and it depends on what you want to do.</p>
 </div>
@@ -594,7 +594,7 @@ output = foo(inputs)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_nlp">4. NLP</h2>
+<h2 id="_nlp">3. NLP</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>[1] Natural language processing (NLP) is an interdisciplinary subfield of computer science and linguistics. It is primarily concerned with giving computers the ability to support and manipulate speech. It involves processing natural language datasets, such as text corpora or speech corpora, using either rule-based or probabilistic (i.e. statistical and, most recently, neural network-based) machine learning approaches. The goal is a computer capable of "understanding" the contents of documents, including the contextual nuances of the language within them. The technology can then accurately extract information and insights contained in the documents as well as categorize and organize the documents themselves.</p>
@@ -611,7 +611,7 @@ output = foo(inputs)</code></pre>
 <p><strong>We&#8217;ll be focusing on Natural Language generation(NLG)</strong></p>
 </div>
 <div class="sect2">
-<h3 id="_how_does_nlg_work">4.1. How does NLG work?</h3>
+<h3 id="_how_does_nlg_work">3.1. How does NLG work?</h3>
 <div class="paragraph">
 <p>NLG is a multi-stage process, with each step further refining the data being used to produce content with natural-sounding language. The six stages of NLG are as follows:</p>
 </div>
@@ -643,7 +643,7 @@ The final output is generated based on a template or format the user or programm
 </div>
 </div>
 <div class="sect1">
-<h2 id="_in_our_case_we_are_looking_at_generative_ai_specifically_given_some_input_text_we_want_a_response_also_in_text_which_is_human_readable">5. In our case, we are looking at generative AI. Specifically, given some input text, we want a response, also in text which is human readable.</h2>
+<h2 id="_in_our_case_we_are_looking_at_generative_ai_specifically_given_some_input_text_we_want_a_response_also_in_text_which_is_human_readable">4. In our case, we are looking at generative AI. Specifically, given some input text, we want a response, also in text which is human readable.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Throwback to what we did in the previous section, i.e. adjust weights and biases of boo() such that it approximates foo()</p>
@@ -658,19 +658,19 @@ Specifically, we have an imginary function foo(), which given some input text, g
 </div>
 </div>
 <div class="sect1">
-<h2 id="_hidden_markovian_models">6. Hidden Markovian Models</h2>
+<h2 id="_hidden_markovian_models">5. Hidden Markovian Models</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Let&#8217;s take a step back and think about the problem.</p>
 </div>
 <div class="sect2">
-<h3 id="_what_are_we_trying_to_do">6.1. What are we trying to do?</h3>
+<h3 id="_what_are_we_trying_to_do">5.1. What are we trying to do?</h3>
 <div class="paragraph">
 <p>We are trying to generate coherent sentences that are relevant to us.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_whats_the_silliest_thing_that_would_work">6.2. What&#8217;s the silliest thing that would work?</h3>
+<h3 id="_whats_the_silliest_thing_that_would_work">5.2. What&#8217;s the silliest thing that would work?</h3>
 <div class="paragraph">
 <p>Well, if we have a sample text of what we expect from our function <code><code>boo()</code></code>, which we do, we could just look at which words occur together and assign them a weight based on how likely two words are to occur next to each other.</p>
 </div>
@@ -771,7 +771,7 @@ Specifically, we have an imginary function foo(), which given some input text, g
 </div>
 </div>
 <div class="sect2">
-<h3 id="_what_are_markovian_models">6.3. What are Markovian Models</h3>
+<h3 id="_what_are_markovian_models">5.3. What are Markovian Models</h3>
 <div class="imageblock">
 <div class="content">
 <img src="https://i.ytimg.com/vi/9yl4XGp5OEg/maxresdefault.jpg" alt="maxresdefault">
@@ -779,7 +779,7 @@ Specifically, we have an imginary function foo(), which given some input text, g
 </div>
 </div>
 <div class="sect2">
-<h3 id="_want_the_maths_behind_this_stuff">6.4. Want the maths behind this stuff?</h3>
+<h3 id="_want_the_maths_behind_this_stuff">5.4. Want the maths behind this stuff?</h3>
 <div class="paragraph">
 <p>For the math geeks, here is the maths :)</p>
 </div>
@@ -790,12 +790,12 @@ Specifically, we have an imginary function foo(), which given some input text, g
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_text_generation_models_using_hmms">6.5. Example Text generation models using HMMs</h3>
+<h3 id="_example_text_generation_models_using_hmms">5.5. Example Text generation models using HMMs</h3>
 <div class="paragraph">
 <p>I&#8217;ve added two text generation models that use HMMs. You can find them</p>
 </div>
 <div class="paragraph">
-<p><a href="Markovian/HMM-based-Text-Prediction-Generation/">here</a> and <a href="Markovian/README.adoc">here</a></p>
+<p><a href="https://github.com/JadenFurtado/Markovian/HMM-based-Text-Prediction-Generation/">here</a> and <a href="https://github.com/JadenFurtado/Markovian/README.adoc">here</a></p>
 </div>
 <div class="paragraph">
 <p>Okay, that&#8217;s a good start, sort off&#8230;&#8203;</p>
@@ -834,13 +834,13 @@ Yes, bring on RNNs</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_rnns">7. RNNs</h2>
+<h2 id="_rnns">6. RNNs</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Well before there were RNNs, we had simple Feed Forward Neural networks :)</p>
 </div>
 <div class="sect2">
-<h3 id="_what_the_heck_is_a_feed_forward_neural_network">7.1. What the heck is a Feed Forward Neural Network?</h3>
+<h3 id="_what_the_heck_is_a_feed_forward_neural_network">6.1. What the heck is a Feed Forward Neural Network?</h3>
 <div class="paragraph">
 <p>While these don&#8217;t add much value to our discussion about solving the text generation problem, they are important for understanding RNNs!</p>
 </div>
@@ -857,7 +857,7 @@ Yes, bring on RNNs</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_what_is_a_neuron_you_ask">7.1.1. What is a neuron you ask?</h4>
+<h4 id="_what_is_a_neuron_you_ask">6.1.1. What is a neuron you ask?</h4>
 <div class="imageblock">
 <div class="content">
 <img src="https://www.researchgate.net/publication/337552334/figure/fig1/AS:829657444265986@1574817157632/The-structure-of-the-feedforward-neural-network-approach-algorithm-is-shown-Basically.ppm" alt="The structure of the feedforward neural network approach algorithm is shown Basically">
@@ -888,7 +888,7 @@ As we have previously discussed, the past word is important for us to predict th
 </div>
 </div>
 <div class="sect2">
-<h3 id="_but_what_are_rnns_again">7.2. But what are RNNs again?</h3>
+<h3 id="_but_what_are_rnns_again">6.2. But what are RNNs again?</h3>
 <div class="paragraph">
 <p>Well, they&#8217;re the big brother of Markovian Models :) Sort off! I&#8217;d argue that an RNN is a more specific version of a Markov Model; A Markov Model with a fancy hat on????</p>
 </div>
@@ -901,12 +901,12 @@ As we have previously discussed, the past word is important for us to predict th
 </div>
 </div>
 <div class="paragraph">
-<p><a href="RNN/README.adoc">I&#8217;ve added a detailed walk through of RNNs for your reference here</a></p>
+<p><a href="https://github.com/JadenFurtado/RNN/README.adoc">I&#8217;ve added a detailed walk through of RNNs for your reference here</a></p>
 </div>
 <div class="sect3">
-<h4 id="_run_a_vanilla_rnn">7.2.1. Run a Vanilla RNN</h4>
+<h4 id="_run_a_vanilla_rnn">6.2.1. Run a Vanilla RNN</h4>
 <div class="paragraph">
-<p>I&#8217;ve added the code for a vanilla RNN <a href="RNN/RNN.py">here</a></p>
+<p>I&#8217;ve added the code for a vanilla RNN <a href="https://github.com/JadenFurtado/RNN/RNN.py">here</a></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1026,10 +1026,21 @@ while True:
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_what_do_you_think_is_the_main_drawback_of_rnns">6.3. What do you think is the main drawback of RNNs?</h3>
+<div class="paragraph">
+<p>Did you catch it? While RNNs (and LSTMs) are comparatively better than Marcov models, they still lack the ability to map long term dependencies. What do I mean by that? Frankly, IDK!</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:P</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_transformers">8. Transformers</h2>
+<h2 id="_transformers">7. Transformers</h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
@@ -1039,19 +1050,19 @@ while True:
 </div>
 </div>
 <div class="sect1">
-<h2 id="_bert">9. BERT</h2>
+<h2 id="_bert">8. BERT</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_llms">10. LLMs</h2>
+<h2 id="_llms">9. LLMs</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references">11. References</h2>
+<h2 id="_references">10. References</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>[1] <a href="https://en.wikipedia.org/wiki/Neuro-linguistic_programming" class="bare">https://en.wikipedia.org/wiki/Neuro-linguistic_programming</a></p>
