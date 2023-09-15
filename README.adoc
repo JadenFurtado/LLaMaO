@@ -17,7 +17,8 @@ ifdef::backend-pdf[]
 :source-highlighter: rouge
 //:rouge-style: github
 endif::[]
-:url: https://github.com/JadenFurtado/
+:url: https://github.com/JadenFurtado/LLaMaO/tree/main/
+
 == Introduction
 
 I've found that most gloss over text generation and take this stuff at face level without understanding the beauty which lies beneath. The purpose of this is to give you an intuition of what is going on behind the scenes.
@@ -165,7 +166,7 @@ image::Markovian/HMM-based-Text-Prediction-Generation/Math.png[]
 
 I've added two text generation models that use HMMs. You can find them
 
-link:{url}Markovian/HMM-based-Text-Prediction-Generation/[here] and link:{url}Markovian/README.adoc[here]
+link:{url}Markovian/HMM-based-Text-Prediction-Generation/[HMM based text Prediction Generation] and link:{url}Markovian/README.adoc[Markovian models]
 
 Okay, that's a good start, sort off...
 
