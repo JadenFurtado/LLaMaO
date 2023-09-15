@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
-<meta name="author" content="NLP, RNNs, Transformers, LLMs and stuff&#8230;&#8203;">
+<meta name="author" content="NLP, RNNs, Transformers, LLMs and stuff&#8230;&#8203; by Jaden Furtado">
 <title>LLaMaO</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -436,12 +436,60 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="book">
 <div id="header">
 <h1>LLaMaO</h1>
 <div class="details">
-<span id="author" class="author">NLP, RNNs, Transformers, LLMs and stuff&#8230;&#8203;</span><br>
+<span id="author" class="author">NLP, RNNs, Transformers, LLMs and stuff&#8230;&#8203; by Jaden Furtado</span><br>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">1. Introduction</a></li>
+<li><a href="#_but_how_do_computers_work">2. But how do computers work :_)</a></li>
+<li><a href="#_what_is_the_purpose_of_ml">3. What is the purpose of ML?</a>
+<ul class="sectlevel2">
+<li><a href="#_giving_it_a_go">3.1. Giving it a go</a></li>
+<li><a href="#_this_act_of_adjusting_the_weights_and_biases_is_called_machine_learning">3.2. This act of adjusting the weights and biases is called Machine learning :)</a></li>
+</ul>
+</li>
+<li><a href="#_nlp">4. NLP</a>
+<ul class="sectlevel2">
+<li><a href="#_how_does_nlg_work">4.1. How does NLG work?</a></li>
+</ul>
+</li>
+<li><a href="#_in_our_case_we_are_looking_at_generative_ai_specifically_given_some_input_text_we_want_a_response_also_in_text_which_is_human_readable">5. In our case, we are looking at generative AI. Specifically, given some input text, we want a response, also in text which is human readable.</a></li>
+<li><a href="#_hidden_markovian_models">6. Hidden Markovian Models</a>
+<ul class="sectlevel2">
+<li><a href="#_what_are_we_trying_to_do">6.1. What are we trying to do?</a></li>
+<li><a href="#_whats_the_silliest_thing_that_would_work">6.2. What&#8217;s the silliest thing that would work?</a></li>
+<li><a href="#_what_are_markovian_models">6.3. What are Markovian Models</a></li>
+<li><a href="#_want_the_maths_behind_this_stuff">6.4. Want the maths behind this stuff?</a></li>
+<li><a href="#_example_text_generation_models_using_hmms">6.5. Example Text generation models using HMMs</a></li>
+</ul>
+</li>
+<li><a href="#_rnns">7. RNNs</a>
+<ul class="sectlevel2">
+<li><a href="#_what_the_heck_is_a_feed_forward_neural_network">7.1. What the heck is a Feed Forward Neural Network?</a>
+<ul class="sectlevel3">
+<li><a href="#_what_is_a_neuron_you_ask">7.1.1. What is a neuron you ask?</a></li>
+</ul>
+</li>
+<li><a href="#_but_what_are_rnns_again">7.2. But what are RNNs again?</a>
+<ul class="sectlevel3">
+<li><a href="#_run_a_vanilla_rnn">7.2.1. Run a Vanilla RNN</a></li>
+</ul>
+</li>
+<li><a href="#_what_do_you_think_is_the_main_drawback_of_rnns">7.3. What do you think is the main drawback of RNNs?</a></li>
+</ul>
+</li>
+<li><a href="#_transformers">8. Transformers</a></li>
+<li><a href="#_bert">9. BERT</a></li>
+<li><a href="#_llms">10. LLMs</a></li>
+<li><a href="#_references">11. References</a></li>
+</ul>
 </div>
 </div>
 <div id="content">
@@ -451,13 +499,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>I&#8217;ve found that most gloss over text generation and take this stuff at face level without understanding the beauty which lies beneath. The purpose of this is to give you an intuition of what is going on behind the scenes.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.</code></pre>
-</div>
-</div>
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p><strong>Francis of Assisi</strong></p>
+<p>Start by doing what&#8217;s necessary; then do what&#8217;s possible; and suddenly you are doing the impossible.
+- Francis of Assisi</p>
+</div>
+</blockquote>
 </div>
 <div class="paragraph">
 <p>I&#8217;ll be following the approach of this quote :)</p>
@@ -748,7 +796,7 @@ Specifically, we have an imginary function foo(), which given some input text, g
 <p>I&#8217;ve added two text generation models that use HMMs. You can find them</p>
 </div>
 <div class="paragraph">
-<p><a href="Markovian/HMM-based-Text-Prediction-Generation/">here</a> and <a href="Markovian/README.adoc">here</a></p>
+<p><a href="https://github.com/JadenFurtado/LLaMaO/tree/main/Markovian/HMM-based-Text-Prediction-Generation/">HMM based text Prediction Generation</a> and <a href="https://github.com/JadenFurtado/LLaMaO/tree/main/Markovian/README.adoc">Markovian models</a></p>
 </div>
 <div class="paragraph">
 <p>Okay, that&#8217;s a good start, sort off&#8230;&#8203;</p>
@@ -854,12 +902,12 @@ As we have previously discussed, the past word is important for us to predict th
 </div>
 </div>
 <div class="paragraph">
-<p><a href="RNN/README.adoc">I&#8217;ve added a detailed walk through of RNNs for your reference here</a></p>
+<p><a href="https://github.com/JadenFurtado/LLaMaO/tree/main/RNN/README.adoc">I&#8217;ve added a detailed walk through of RNNs for your reference here</a></p>
 </div>
 <div class="sect3">
 <h4 id="_run_a_vanilla_rnn">7.2.1. Run a Vanilla RNN</h4>
 <div class="paragraph">
-<p>I&#8217;ve added the code for a vanilla RNN <a href="RNN/RNN.py">here</a></p>
+<p>I&#8217;ve added the code for a vanilla RNN <a href="https://github.com/JadenFurtado/LLaMaO/tree/main/RNN/RNN.py">here</a></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -976,6 +1024,17 @@ while True:
   p += seq_length # move data pointer
   n += 1 # iteration counter </code></pre>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_do_you_think_is_the_main_drawback_of_rnns">7.3. What do you think is the main drawback of RNNs?</h3>
+<div class="paragraph">
+<p>Did you catch it? While RNNs (and LSTMs) are comparatively better than Marcov models, they still lack the ability to map long term dependencies. What do I mean by that? Frankly, IDK!</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:P</pre>
 </div>
 </div>
 </div>
