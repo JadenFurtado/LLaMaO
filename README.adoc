@@ -17,7 +17,7 @@ ifdef::backend-pdf[]
 :source-highlighter: rouge
 //:rouge-style: github
 endif::[]
-
+:url: https://github.com/JadenFurtado/
 == Introduction
 
 I've found that most gloss over text generation and take this stuff at face level without understanding the beauty which lies beneath. The purpose of this is to give you an intuition of what is going on behind the scenes.
@@ -164,7 +164,7 @@ image::Markovian/HMM-based-Text-Prediction-Generation/Math.png[]
 
 I've added two text generation models that use HMMs. You can find them
 
-link:Markovian/HMM-based-Text-Prediction-Generation/[here] and link:Markovian/README.adoc[here]
+link:{url}Markovian/HMM-based-Text-Prediction-Generation/[here] and link:{url}Markovian/README.adoc[here]
 
 Okay, that's a good start, sort off...
 
@@ -223,16 +223,22 @@ It is difficult for me to explain what I mean by this without additional informa
 
 image::https://www.tensorflow.org/static/text/tutorials/images/text_generation_training.png[]
 
-link:RNN/README.adoc[I've added a detailed walk through of RNNs for your reference here]
+link:{url}RNN/README.adoc[I've added a detailed walk through of RNNs for your reference here]
 
 
 ==== Run a Vanilla RNN
 
-I've added the code for a vanilla RNN link:RNN/RNN.py[here]
+I've added the code for a vanilla RNN link:{url}RNN/RNN.py[here]
 
 ```python
 include::RNN/RNN.py[]
 ```
+
+=== What do you think is the main drawback of RNNs? 
+Did you catch it? While RNNs (and LSTMs) are comparatively better than Marcov models, they still lack the ability to map long term dependencies. What do I mean by that? Frankly, IDK!  
+
+ :P
+
 
 
 == Transformers
