@@ -437,6 +437,221 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
 </head>
 <body class="book">
 <div id="header">
@@ -486,9 +701,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_transformers">8. Transformers</a></li>
-<li><a href="#_bert">9. BERT</a></li>
-<li><a href="#_llms">10. LLMs</a></li>
-<li><a href="#_references">11. References</a></li>
+<li><a href="#_references">9. References</a></li>
 </ul>
 </div>
 </div>
@@ -556,7 +769,7 @@ I have a bunch of expected outputs, say <code><code>Out</code></code>. I know wh
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>inp = data
+<pre class="rouge highlight"><code>inp = data
 output = foo(inp)</code></pre>
 </div>
 </div>
@@ -574,7 +787,7 @@ output = foo(inp)</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>inputs = data
+<pre class="rouge highlight"><code>inputs = data
 output'= boo(inputs,weights,biases)
 output = foo(inputs)</code></pre>
 </div>
@@ -911,118 +1124,125 @@ As we have previously discussed, the past word is important for us to predict th
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-python" data-lang="python">"""
+<pre class="rouge highlight"><code data-lang="python"><span class="s">"""
 Minimal character-level Vanilla RNN model. Written by Andrej Karpathy (@karpathy)
 BSD License
-"""
-import numpy as np
+"""</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
-# data I/O
-data = open('input_2.txt', 'r').read() # should be simple plain text file
-chars = list(set(data))
-data_size, vocab_size = len(data), len(chars)
-print('data has %d characters, %d unique.' % (data_size, vocab_size))
-char_to_ix = { ch:i for i,ch in enumerate(chars) }
-ix_to_char = { i:ch for i,ch in enumerate(chars) }
+<span class="c1"># data I/O
+</span><span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'input_1.txt'</span><span class="p">,</span> <span class="s">'r'</span><span class="p">).</span><span class="n">read</span><span class="p">()</span> <span class="c1"># should be simple plain text file
+</span><span class="n">chars</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="n">data_size</span><span class="p">,</span> <span class="n">vocab_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'data has %d characters, %d unique.'</span> <span class="o">%</span> <span class="p">(</span><span class="n">data_size</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">))</span>
+<span class="n">char_to_ix</span> <span class="o">=</span> <span class="p">{</span> <span class="n">ch</span><span class="p">:</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">ix_to_char</span> <span class="o">=</span> <span class="p">{</span> <span class="n">i</span><span class="p">:</span><span class="n">ch</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span> <span class="p">}</span>
 
-# hyperparameters
-hidden_size = 100 # size of hidden layer of neurons
-seq_length = 25 # number of steps to unroll the RNN for
-learning_rate = 1e-1
+<span class="c1"># hyperparameters
+</span><span class="n">hidden_size</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># size of hidden layer of neurons
+</span><span class="n">seq_length</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># number of steps to unroll the RNN for
+</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">1e-1</span>
 
-# model parameters
-Wxh = np.random.randn(hidden_size, vocab_size)*0.01 # input to hidden
-Whh = np.random.randn(hidden_size, hidden_size)*0.01 # hidden to hidden
-Why = np.random.randn(vocab_size, hidden_size)*0.01 # hidden to output
-bh = np.zeros((hidden_size, 1)) # hidden bias
-by = np.zeros((vocab_size, 1)) # output bias
-
-def lossFun(inputs, targets, hprev):
-  """
+<span class="c1"># model parameters
+</span><span class="n">Wxh</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span> <span class="c1"># input to hidden
+</span><span class="n">Whh</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span> <span class="c1"># hidden to hidden
+</span><span class="n">Why</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span> <span class="c1"># hidden to output
+</span><span class="n">bh</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">hidden_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># hidden bias
+</span><span class="n">by</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">vocab_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># output bias
+</span>
+<span class="k">def</span> <span class="nf">lossFun</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">hprev</span><span class="p">):</span>
+  <span class="s">"""
   inputs,targets are both list of integers.
   hprev is Hx1 array of initial hidden state
   returns the loss, gradients on model parameters, and last hidden state
-  """
-  xs, hs, ys, ps = {}, {}, {}, {}
-  hs[-1] = np.copy(hprev)
-  loss = 0
-  # forward pass
-  for t in range(len(inputs)):
-    xs[t] = np.zeros((vocab_size,1)) # encode in 1-of-k representation
-    xs[t][inputs[t]] = 1
-    hs[t] = np.tanh(np.dot(Wxh, xs[t]) + np.dot(Whh, hs[t-1]) + bh) # hidden state
-    ys[t] = np.dot(Why, hs[t]) + by # unnormalized log probabilities for next chars
-    ps[t] = np.exp(ys[t]) / np.sum(np.exp(ys[t])) # probabilities for next chars
-    loss += -np.log(ps[t][targets[t],0]) # softmax (cross-entropy loss)
-  # backward pass: compute gradients going backwards
-  dWxh, dWhh, dWhy = np.zeros_like(Wxh), np.zeros_like(Whh), np.zeros_like(Why)
-  dbh, dby = np.zeros_like(bh), np.zeros_like(by)
-  dhnext = np.zeros_like(hs[0])
-  for t in reversed(range(len(inputs))):
-    dy = np.copy(ps[t])
-    dy[targets[t]] -= 1 # backprop into y. see http://cs231n.github.io/neural-networks-case-study/#grad if confused here
-    dWhy += np.dot(dy, hs[t].T)
-    dby += dy
-    dh = np.dot(Why.T, dy) + dhnext # backprop into h
-    dhraw = (1 - hs[t] * hs[t]) * dh # backprop through tanh nonlinearity
-    dbh += dhraw
-    dWxh += np.dot(dhraw, xs[t].T)
-    dWhh += np.dot(dhraw, hs[t-1].T)
-    dhnext = np.dot(Whh.T, dhraw)
-  for dparam in [dWxh, dWhh, dWhy, dbh, dby]:
-    np.clip(dparam, -5, 5, out=dparam) # clip to mitigate exploding gradients
-  return loss, dWxh, dWhh, dWhy, dbh, dby, hs[len(inputs)-1]
+  """</span>
+  <span class="n">xs</span><span class="p">,</span> <span class="n">hs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">ps</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{},</span> <span class="p">{},</span> <span class="p">{}</span>
+  <span class="n">hs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">copy</span><span class="p">(</span><span class="n">hprev</span><span class="p">)</span>
+  <span class="n">loss</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="c1"># forward pass
+</span>  <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputs</span><span class="p">)):</span>
+    <span class="n">xs</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">vocab_size</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># encode in 1-of-k representation
+</span>    <span class="n">xs</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">inputs</span><span class="p">[</span><span class="n">t</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">hs</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wxh</span><span class="p">,</span> <span class="n">xs</span><span class="p">[</span><span class="n">t</span><span class="p">])</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Whh</span><span class="p">,</span> <span class="n">hs</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">bh</span><span class="p">)</span> <span class="c1"># hidden state
+</span>    <span class="n">ys</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Why</span><span class="p">,</span> <span class="n">hs</span><span class="p">[</span><span class="n">t</span><span class="p">])</span> <span class="o">+</span> <span class="n">by</span> <span class="c1"># unnormalized log probabilities for next chars
+</span>    <span class="n">ps</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">ys</span><span class="p">[</span><span class="n">t</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">ys</span><span class="p">[</span><span class="n">t</span><span class="p">]))</span> <span class="c1"># probabilities for next chars
+</span>    <span class="n">loss</span> <span class="o">+=</span> <span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">ps</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">targets</span><span class="p">[</span><span class="n">t</span><span class="p">],</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># softmax (cross-entropy loss)
+</span>  <span class="c1"># backward pass: compute gradients going backwards
+</span>  <span class="n">dWxh</span><span class="p">,</span> <span class="n">dWhh</span><span class="p">,</span> <span class="n">dWhy</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Wxh</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Whh</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Why</span><span class="p">)</span>
+  <span class="n">dbh</span><span class="p">,</span> <span class="n">dby</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">bh</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">by</span><span class="p">)</span>
+  <span class="n">dhnext</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">hs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputs</span><span class="p">))):</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">copy</span><span class="p">(</span><span class="n">ps</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>
+    <span class="n">dy</span><span class="p">[</span><span class="n">targets</span><span class="p">[</span><span class="n">t</span><span class="p">]]</span> <span class="o">-=</span> <span class="mi">1</span> <span class="c1"># backprop into y. see http://cs231n.github.io/neural-networks-case-study/#grad if confused here
+</span>    <span class="n">dWhy</span> <span class="o">+=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">dy</span><span class="p">,</span> <span class="n">hs</span><span class="p">[</span><span class="n">t</span><span class="p">].</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">dby</span> <span class="o">+=</span> <span class="n">dy</span>
+    <span class="n">dh</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Why</span><span class="p">.</span><span class="n">T</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span> <span class="o">+</span> <span class="n">dhnext</span> <span class="c1"># backprop into h
+</span>    <span class="n">dhraw</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">hs</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">*</span> <span class="n">hs</span><span class="p">[</span><span class="n">t</span><span class="p">])</span> <span class="o">*</span> <span class="n">dh</span> <span class="c1"># backprop through tanh nonlinearity
+</span>    <span class="n">dbh</span> <span class="o">+=</span> <span class="n">dhraw</span>
+    <span class="n">dWxh</span> <span class="o">+=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">dhraw</span><span class="p">,</span> <span class="n">xs</span><span class="p">[</span><span class="n">t</span><span class="p">].</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">dWhh</span> <span class="o">+=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">dhraw</span><span class="p">,</span> <span class="n">hs</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">dhnext</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Whh</span><span class="p">.</span><span class="n">T</span><span class="p">,</span> <span class="n">dhraw</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">dparam</span> <span class="ow">in</span> <span class="p">[</span><span class="n">dWxh</span><span class="p">,</span> <span class="n">dWhh</span><span class="p">,</span> <span class="n">dWhy</span><span class="p">,</span> <span class="n">dbh</span><span class="p">,</span> <span class="n">dby</span><span class="p">]:</span>
+    <span class="n">np</span><span class="p">.</span><span class="n">clip</span><span class="p">(</span><span class="n">dparam</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">dparam</span><span class="p">)</span> <span class="c1"># clip to mitigate exploding gradients
+</span>  <span class="k">return</span> <span class="n">loss</span><span class="p">,</span> <span class="n">dWxh</span><span class="p">,</span> <span class="n">dWhh</span><span class="p">,</span> <span class="n">dWhy</span><span class="p">,</span> <span class="n">dbh</span><span class="p">,</span> <span class="n">dby</span><span class="p">,</span> <span class="n">hs</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-def sample(h, seed_ix, n):
-  """ 
+<span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">seed_ix</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+  <span class="s">""" 
   sample a sequence of integers from the model 
   h is memory state, seed_ix is seed letter for first time step
-  """
-  x = np.zeros((vocab_size, 1))
-  x[seed_ix] = 1
-  ixes = []
-  for t in range(n):
-    h = np.tanh(np.dot(Wxh, x) + np.dot(Whh, h) + bh)
-    y = np.dot(Why, h) + by
-    p = np.exp(y) / np.sum(np.exp(y))
-    ix = np.random.choice(range(vocab_size), p=p.ravel())
-    x = np.zeros((vocab_size, 1))
-    x[ix] = 1
-    ixes.append(ix)
-  return ixes
+  """</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">vocab_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+  <span class="n">x</span><span class="p">[</span><span class="n">seed_ix</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">ixes</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wxh</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Whh</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">+</span> <span class="n">bh</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Why</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">+</span> <span class="n">by</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="n">ix</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">),</span> <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">.</span><span class="n">ravel</span><span class="p">())</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">vocab_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">x</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">ixes</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">ix</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">ixes</span>
 
-n, p = 0, 0
-mWxh, mWhh, mWhy = np.zeros_like(Wxh), np.zeros_like(Whh), np.zeros_like(Why)
-mbh, mby = np.zeros_like(bh), np.zeros_like(by) # memory variables for Adagrad
-smooth_loss = -np.log(1.0/vocab_size)*seq_length # loss at iteration 0
-while True:
-  # prepare inputs (we're sweeping from left to right in steps seq_length long)
-  if p+seq_length+1 &gt;= len(data) or n == 0: 
-    hprev = np.zeros((hidden_size,1)) # reset RNN memory
-    p = 0 # go from start of data
-  inputs = [char_to_ix[ch] for ch in data[p:p+seq_length]]
-  targets = [char_to_ix[ch] for ch in data[p+1:p+seq_length+1]]
+<span class="n">n</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+<span class="n">mWxh</span><span class="p">,</span> <span class="n">mWhh</span><span class="p">,</span> <span class="n">mWhy</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Wxh</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Whh</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Why</span><span class="p">)</span>
+<span class="n">mbh</span><span class="p">,</span> <span class="n">mby</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">bh</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">by</span><span class="p">)</span> <span class="c1"># memory variables for Adagrad
+</span><span class="n">smooth_loss</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="n">vocab_size</span><span class="p">)</span><span class="o">*</span><span class="n">seq_length</span> <span class="c1"># loss at iteration 0
+</span><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+  <span class="c1"># prepare inputs (we're sweeping from left to right in steps seq_length long)
+</span>  <span class="k">if</span> <span class="n">p</span><span class="o">+</span><span class="n">seq_length</span><span class="o">+</span><span class="mi">1</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+    <span class="n">hprev</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">hidden_size</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># reset RNN memory
+</span>    <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># go from start of data
+</span>  <span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">char_to_ix</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">p</span><span class="p">:</span><span class="n">p</span><span class="o">+</span><span class="n">seq_length</span><span class="p">]]</span>
+  <span class="n">targets</span> <span class="o">=</span> <span class="p">[</span><span class="n">char_to_ix</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">p</span><span class="o">+</span><span class="n">seq_length</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span>
 
-  # sample from the model now and then
-  if n % 100 == 0:
-    sample_ix = sample(hprev, inputs[0], 200)
-    txt = ''.join(ix_to_char[ix] for ix in sample_ix)
-    print('----\n %s \n----' % (txt, ))
+  <span class="c1"># sample from the model now and then
+</span>  <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">sample_ix</span> <span class="o">=</span> <span class="n">sample</span><span class="p">(</span><span class="n">hprev</span><span class="p">,</span> <span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="n">txt</span> <span class="o">=</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">ix_to_char</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span> <span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="n">sample_ix</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'----</span><span class="se">\n</span><span class="s"> %s </span><span class="se">\n</span><span class="s">----'</span> <span class="o">%</span> <span class="p">(</span><span class="n">txt</span><span class="p">,</span> <span class="p">))</span>
 
-  # forward seq_length characters through the net and fetch gradient
-  loss, dWxh, dWhh, dWhy, dbh, dby, hprev = lossFun(inputs, targets, hprev)
-  smooth_loss = smooth_loss * 0.999 + loss * 0.001
-  if n % 100 == 0: print( 'iter %d, loss: %f' % (n, smooth_loss)) # print progress
-  
-  # perform parameter update with Adagrad
-  for param, dparam, mem in zip([Wxh, Whh, Why, bh, by], 
-                                [dWxh, dWhh, dWhy, dbh, dby], 
-                                [mWxh, mWhh, mWhy, mbh, mby]):
-    mem += dparam * dparam
-    param += -learning_rate * dparam / np.sqrt(mem + 1e-8) # adagrad update
+  <span class="c1"># forward seq_length characters through the net and fetch gradient
+</span>  <span class="n">loss</span><span class="p">,</span> <span class="n">dWxh</span><span class="p">,</span> <span class="n">dWhh</span><span class="p">,</span> <span class="n">dWhy</span><span class="p">,</span> <span class="n">dbh</span><span class="p">,</span> <span class="n">dby</span><span class="p">,</span> <span class="n">hprev</span> <span class="o">=</span> <span class="n">lossFun</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">hprev</span><span class="p">)</span>
+  <span class="n">smooth_loss</span> <span class="o">=</span> <span class="n">smooth_loss</span> <span class="o">*</span> <span class="mf">0.999</span> <span class="o">+</span> <span class="n">loss</span> <span class="o">*</span> <span class="mf">0.001</span>
+  <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span> <span class="s">'iter %d, loss: %f'</span> <span class="o">%</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">smooth_loss</span><span class="p">))</span> <span class="c1"># print progress
+</span>  
+  <span class="c1"># perform parameter update with Adagrad
+</span>  <span class="k">for</span> <span class="n">param</span><span class="p">,</span> <span class="n">dparam</span><span class="p">,</span> <span class="n">mem</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="n">Wxh</span><span class="p">,</span> <span class="n">Whh</span><span class="p">,</span> <span class="n">Why</span><span class="p">,</span> <span class="n">bh</span><span class="p">,</span> <span class="n">by</span><span class="p">],</span> 
+                                <span class="p">[</span><span class="n">dWxh</span><span class="p">,</span> <span class="n">dWhh</span><span class="p">,</span> <span class="n">dWhy</span><span class="p">,</span> <span class="n">dbh</span><span class="p">,</span> <span class="n">dby</span><span class="p">],</span> 
+                                <span class="p">[</span><span class="n">mWxh</span><span class="p">,</span> <span class="n">mWhh</span><span class="p">,</span> <span class="n">mWhy</span><span class="p">,</span> <span class="n">mbh</span><span class="p">,</span> <span class="n">mby</span><span class="p">]):</span>
+    <span class="n">mem</span> <span class="o">+=</span> <span class="n">dparam</span> <span class="o">*</span> <span class="n">dparam</span>
+    <span class="n">param</span> <span class="o">+=</span> <span class="o">-</span><span class="n">learning_rate</span> <span class="o">*</span> <span class="n">dparam</span> <span class="o">/</span> <span class="n">np</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mem</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span> <span class="c1"># adagrad update
+</span>
+  <span class="n">p</span> <span class="o">+=</span> <span class="n">seq_length</span> <span class="c1"># move data pointer
+</span>  <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># iteration counter 
+</span>
 
-  p += seq_length # move data pointer
-  n += 1 # iteration counter </code></pre>
+
+<span class="c1"># IEEE C^3
+</span>
+<span class="c1"># gradient = 0.00000000000000000000000000000000000000000000000000000000000001
+# updatedGrd = gradient+learningRate*gradient</span></code></pre>
 </div>
 </div>
 </div>
@@ -1051,19 +1271,7 @@ while True:
 </div>
 </div>
 <div class="sect1">
-<h2 id="_bert">9. BERT</h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_llms">10. LLMs</h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_references">11. References</h2>
+<h2 id="_references">9. References</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>[1] <a href="https://en.wikipedia.org/wiki/Neuro-linguistic_programming" class="bare">https://en.wikipedia.org/wiki/Neuro-linguistic_programming</a></p>
@@ -1082,6 +1290,12 @@ while True:
 </div>
 <div class="paragraph">
 <p>[6] <a href="https://gist.github.com/karpathy/d4dee566867f8291f086" class="bare">https://gist.github.com/karpathy/d4dee566867f8291f086</a></p>
+</div>
+<div class="paragraph">
+<p>[7] <a href="https://towardsdatascience.com/all-you-need-to-know-about-attention-and-transformers-in-depth-understanding-part-1-552f0b41d021" class="bare">https://towardsdatascience.com/all-you-need-to-know-about-attention-and-transformers-in-depth-understanding-part-1-552f0b41d021</a></p>
+</div>
+<div class="paragraph">
+<p>[8] <a href="https://www.lesswrong.com/posts/pHPmMGEMYefk9jLeh/llm-basics-embedding-spaces-transformer-token-vectors-are" class="bare">https://www.lesswrong.com/posts/pHPmMGEMYefk9jLeh/llm-basics-embedding-spaces-transformer-token-vectors-are</a></p>
 </div>
 </div>
 </div>
