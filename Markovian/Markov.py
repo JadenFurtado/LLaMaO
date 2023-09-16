@@ -2,12 +2,12 @@ import nltk
 import random
 import string
 
-text_file = open ("dataset2.txt","r",encoding="utf-8")
+text_file = open ("dataset.txt","r",encoding="utf-8")
 article_text=text_file.read()
 text_file.close()
 
-article_text=article_text.lower()
-article_text= article_text.translate(str.maketrans('', '', string.punctuation))
+article_text=article_text.lower() #lower contents
+article_text= article_text.translate(str.maketrans('', '', string.punctuation)) # split on punctuations
 
 
 ngrams = {}
@@ -20,10 +20,11 @@ for i in range(len(words_tokens)-words):
         ngrams[seq] = []
     ngrams[seq].append(words_tokens[i+words])
 
+"""
 print ("ngrams dictionary")
 for key, value in ngrams.items() :
     print (key, value,)
-
+"""
 
 
 for m in range (5):

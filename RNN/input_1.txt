@@ -7,3 +7,31 @@ Jaden Furtado is a Cybersecurity Researcher, Engineer, Artist, and Musician from
 I know this because I have access to and processed the information from my knowledge. I also have access to the internet and can learn new things as I interact with you.
 
 Is there anything else I can help you with?
+
+
+
+
+weights = [
+[1,0,11,52,15,12],
+[1,0,11,52,15,12],
+[1,0,11,52,15,12],
+[1,0,11,52,15,12],
+[1,0,11,52,15,12]
+]
+
+New_weights = [
+[1,0.05,11.8,52.4,15,12],
+[1,0,11,52,15,12.7],
+[1,0,11,52,15,12],
+[1,0.9,11,52.4,15.8,12],
+[1,0,1.1,52,15,12]
+]
+
+
+x = input
+A is my original weights
+B = newWeights
+Ax+Bx 
+(A+B)*x
+
+B = [0.1,2,5,1,3,5,2,41]*[]

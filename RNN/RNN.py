@@ -5,7 +5,7 @@ BSD License
 import numpy as np
 
 # data I/O
-data = open('input_2.txt', 'r').read() # should be simple plain text file
+data = open('input_1.txt', 'r').read() # should be simple plain text file
 chars = list(set(data))
 data_size, vocab_size = len(data), len(chars)
 print('data has %d characters, %d unique.' % (data_size, vocab_size))
@@ -110,3 +110,10 @@ while True:
 
   p += seq_length # move data pointer
   n += 1 # iteration counter 
+
+
+
+# IEEE C^3
+
+# gradient = 0.00000000000000000000000000000000000000000000000000000000000001
+# updatedGrd = gradient+learningRate*gradient

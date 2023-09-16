@@ -3,6 +3,7 @@ NLP, RNNs, Transformers, LLMs and stuff... by Jaden Furtado
 :doctype: book
 :preface-title: Preface
 // Settings:
+:source-highlighter: rouge
 :experimental:
 :reproducible:
 :icons: font
@@ -247,13 +248,6 @@ Did you catch it? While RNNs (and LSTMs) are comparatively better than Marcov mo
 
 image::https://machinelearningmastery.com/wp-content/uploads/2021/08/attention_research_1.png[]
 
-== BERT
-
-
-
-== LLMs
-
-
 
 == References
 
@@ -268,3 +262,7 @@ image::https://machinelearningmastery.com/wp-content/uploads/2021/08/attention_r
 [5] https://www.tensorflow.org/text/tutorials/text_generation
 
 [6] https://gist.github.com/karpathy/d4dee566867f8291f086
+
+[7] https://towardsdatascience.com/all-you-need-to-know-about-attention-and-transformers-in-depth-understanding-part-1-552f0b41d021
+
+[8] https://www.lesswrong.com/posts/pHPmMGEMYefk9jLeh/llm-basics-embedding-spaces-transformer-token-vectors-are
