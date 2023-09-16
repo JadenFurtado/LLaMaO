@@ -1,0 +1,71 @@
+In this article, we are going to discuss developing a text generation bot which is simulating an existing text. We will use N-Gram and Markow processes principles. The idea of generating new texts have been popular since the invention of Markov processes. In this article, we are going to combine them.
+N-gram
+
+In the fields of Natural Language Processing an n-gram is a sequence of n items from a given sample of text. These items can be words, letters or pairs according to the application. The N-gram typically are collected from a text or speech corpus. [1]
+
+Using Latin numerical prefixes, an n-gram of size 1 is referred to as a “unigram”; size 2 is a “bigram” (or, less commonly, a “digram”); size 3 is a “trigram”.English cardinal numbers are sometimes used, e.g., “four-gram”, “five-gram”, and so on.
+
+In unigrams each word is single, but bigrams should be pair of two words. Bigram separation is represented in Figure 1.
+Figure 1: Words are separated by bigrams (ngram, n size two)
+
+A trigram is a three-word sequence of words. The separation represented in Figure 2.
+Figure 2: Words are separated by trigrams (ngram, n size three)
+Markov Process
+
+””” A Markov process can be used to generate new word sequences with a random walk procedure consisting of drawing random states according to the word transition probabilities. Each word wi is generated with probability PM(wi|wi−n, . . . , wi−1) depending only on the n − 1 words previously generated. For instance, the order-1 Markov model of the following corpus:
+
+    Clay loves Mary
+    Mary Loves Clay
+    Clay loves Mary today
+    Mary loves Paul today
+
+Figure 3: An order-1 Markov process learned from a corpus composed of five words.
+
+is represented in Figure 3. A random walk could produce sequences such as “loves Mary loves Clay loves”, or “Paul today”.[2] ”””
+Text Generating Model And Algortihm
+
+In that project we developed our implementation in three main parts. Those parts are sequentially;
+Read Dataset and Complete Preprocess
+
+First of all the algorithm applies the preprocessing to raw data. Algorithm converts the text to lower case for easier operation. Moreover algorithm also clean some punctuations in lower case dictionary for easier operation. We use a simple dataset for claritiy. Dataset is {a a b a a b c d e a a b a a d}
+Tokenize Words and Create N-GRAM Dictionary:
+
+First we divide the dataset word by word then create bigram dictionary or trigram dictionary. We fill the keys by bigram or trigram strings then fill the values by following words.
+
+If “words” value is 2 then code works as bigrams. If “words” value is 3 then code works as trigrams. We fill the keys by bigram or trigram strings then fill the values by following words.
+
+The dataset is consist of 15 words whose are a, b, c, d, e. The dataset is divided by tokens then bigram and trigram dictionaries are created and following words are set to values sections.
+
+Bigram dictionary has 7 members whose are consist of bigram words and values. Trigram dictionary has 8 members whose are consist of trigrams words and values.
+Table 1: Bigram and Trigram Dictionaries
+
+Values added the dictionaries by append function so there could be more than one “b” or more than one “a”. This feature will affect the text generation process probability.
+Generate Text Randomly
+
+It is possible to see that in Table 1, bigram and trigram dictionaries are completely different. Therefore their state diagrams and generated results should be totaly different.
+
+The last part of the code can be found below.
+Results
+
+Turkish is an aggluginative language. In order to use this model in the Turkish language very large data sets are required. Because suffixes can make the words different.
+
+For this reason, we chose to use the Anna Karenina Novel as a large dataset. The success of the model increases with the growth of the data set. As the data set grows, preprocess operations increase. The word used in the transition from one state to the next is the basis for generating new text. In this case, the model can produce partially meaningful texts. This aspect is quite successful model.
+Bigram Results
+
+    olup olmadığını bir sorun ölüm sorunu çıkmıştı đşte ölüyor baharda ölecek ona nasıl yardım etmeli ona ne oldu bir de bacağını altına alarak oturmasının dışında uygunsuz bir zamanda geldiği için plansız başlandı mimarla konuşmasını bitiren vronski bayanların
+
+    gibi belirsizdi darya aleksandrovna yazı çocuklarıyla birlikte pokrovskoyede kız kardeşi katerina pavlovnanın sevdiğinden daha çok tekrarlamaya içini çekmeye başını göğe kaldırmaya başladı buna katlanamayarak ağlayacağından ya da rutubetten kelleşmiş hiçbir yer yoktu yalnız yer yer gökyüzünü karartan
+
+Trigram Results
+
+    etkilemiş olurdu boşanmaya başvurması ancak düşmanlarının kendisine iftira atmak ve sosyetedeki yüksek durumunu sarsmak için fırsat sayacakları bir dava olmaktan öteye geçmeyecekti boşanma ile de başlıca amaç olan durumun en az üzüntüyle açıklığa kavuşturulmasına erişilmiş olmuyordu ayrıca boşansa
+
+    haber verilmesini beklemeden doğru çalışma odasına çıktı kontes içeri girdiğinde aleksey aleksandroviç başını öte yana çevirdi işte ona bunları söylemek istiyordum dedi evet evet haklısınız haklısınız yemekte pestsovun kadınların hakları üzerine söylediklerini levin ancak şimdi kitinin yüzünde gördüğü
+
+Finally
+
+It is possible to use Bigram or Trigram for text generation. Each one has its own advantages and disadvantages. Trigrams may have better results than bigrams. On the other hand trigrams may cause some overfitting issues and bigrams can cause some underfitting issues.
+
+N-gram algorithms may not be suggested for some aggluginative languages like Turkish and Russian.
+
+I hope this article was helpful. As Mr. Cebeci says, good luck everyone.
